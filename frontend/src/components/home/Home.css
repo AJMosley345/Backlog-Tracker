@@ -1,0 +1,46 @@
+@import url('https://fonts.googleapis.com/css2?family=Sora:wght@200&display=swap');
+
+.Header {
+    text-align: left;
+    padding-top: 25px;
+    padding-bottom: 25px;
+    font-family: 'Sora', sans-serif;
+}
+
+.Skills {
+    text-align: center;
+}
+
+.Education {
+    text-align: left;
+    padding-left: 50px;
+    font-family: 'Sora', sans-serif;
+}
+
+.List {
+    padding-top: 5px;
+    text-align: left;
+    font-family: 'Sora', sans-serif;
+}
+
+.Link {
+    text-align: center;
+    font-family: 'Sora', sans-serif;
+    padding-top: 50px;
+    padding-bottom: 10px;
+    align-items: center;
+}
+
+.Left-Align {
+    padding-left: 20px;
+    text-align: left;
+    font-family: 'Sora', sans-serif;
+}
+
+body #fonts {
+    font-family: 'Sora', sans-serif;
+}
+
+.background {
+    background-color: silver;
+}

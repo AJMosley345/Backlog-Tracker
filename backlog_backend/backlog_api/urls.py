@@ -9,5 +9,8 @@ from .views import GameView
 
 router = routers.DefaultRouter()
 router.register('api/game_info', GameView)
-
+urlpatterns = [
+    path('admin/', admin.site.urls),
+    path('api/', include(router.urls)),
+]
 urlpatterns = router.urls
