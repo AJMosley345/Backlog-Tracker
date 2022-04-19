@@ -1,6 +1,6 @@
 import games from './gameinfo_a';
 import GameInfo from "./GameInfo";
-import React, { useEffect } from 'react';
+import React, { useState,useEffect } from 'react';
 
 // Takes the json response from gameinfo_a, puts it into the format of GameInfo and displays it
 const Games = () => {
@@ -24,6 +24,7 @@ const Games = () => {
                                 name={game.name}
                                 hours={game.hours}
                                 completion={game.completion}
+                                key={game.name}
                                 />
                             </>
                         )
@@ -44,3 +45,5 @@ const Games = () => {
         </>
     )
 }
+
+export default Games
