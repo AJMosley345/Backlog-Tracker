@@ -1,4 +1,3 @@
-
 from django.conf.urls.static import static
 from django.contrib import admin
 from django.urls import path, include
@@ -8,7 +7,7 @@ from rest_framework import routers
 from .views import GameView
 
 router = routers.DefaultRouter()
-router.register('',GameView)
+router.register('api/game_info',GameView)
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('backlog_api.urls')),
