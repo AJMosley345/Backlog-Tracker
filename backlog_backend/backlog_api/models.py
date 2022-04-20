@@ -5,16 +5,9 @@ from django.utils import timezone
 
 # Model for games
 class GameInfo(models.Model):
-    CompletionStatus = models.TextChoices(
-        'CompletionStatus', 'Incomplete Playing Complete'
-        )
+    id = models.BigAutoField(primary_key=True)
     name = models.CharField(max_length=100)
-    hours = models.IntegerField()
-    completion = models.CharField(
-        blank=True, 
-        choices=CompletionStatus.choices, 
-        max_length=20
-        )
+    hours = models.IntegerField(blank=True, default=0)
 
     def __str__(self):
         return self.name

@@ -23,8 +23,7 @@ const Games = () => {
                                 <GameInfo 
                                 name={game.name}
                                 hours={game.hours}
-                                completion={game.completion}
-                                key={game.name}
+                                key={game.id}
                                 />
                             </>
                         )

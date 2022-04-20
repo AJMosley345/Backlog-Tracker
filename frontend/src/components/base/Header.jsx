@@ -1,6 +1,5 @@
 import React from "react";
-import './Home.css'
-import { Typography, Container, ThemeProvider, createTheme } from '@mui/material'
+import { Typography, ThemeProvider, createTheme } from '@mui/material'
 
 const theme = createTheme({
     typography: {
@@ -21,11 +20,9 @@ const theme = createTheme({
 function Header() {
     return (
         <ThemeProvider theme={theme}>
-            <Container className="Header" align="center">
-                <Typography variant="h3" align="center">
+                <Typography variant="h3">
                     Backlog Tracker
                 </Typography>
-            </Container>
         </ThemeProvider>
     );
 }
