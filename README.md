@@ -3,7 +3,11 @@
 # Features
 - Add and Delete Games
 - Lists games on the front page (Title, Hours, Completion Status)
-- Hours are taken from [Howlongtobeat API](https://github.com/ckatzorke/howlongtobeat)
+
+# Plans
+- Filter based on status
+- Add way to auto-get hours to beat
+- List total games in list and how many you have beat
 # Stack
 - Backend
     - Django (Rest Framework)

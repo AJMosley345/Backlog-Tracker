@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from "react";
-import { Formik, useFormik } from "formik";
+import React from "react";
+import { useFormik } from "formik";
 import { 
     Box, 
     Container, 
@@ -26,7 +26,6 @@ function AddGame () {
             formik.resetForm();
         }
     })
-
     const csKeys = ['', 'I', 'P', 'C']
 
     return (
@@ -38,6 +37,7 @@ function AddGame () {
                         flexdirection='column' 
                         justifycontent='center'
                     >
+                        {/*Name Field*/}
                         <Box mt={1}>
                             <TextField
                                 required
@@ -48,6 +48,7 @@ function AddGame () {
                                 value={formik.values.name}
                                 />
                         </Box>
+                        {/*Hours Field*/}
                         <Box mt={3}>
                             <TextField
                                 type="number"
@@ -59,6 +60,7 @@ function AddGame () {
                                 value={formik.values.hours}
                                 />
                         </Box>
+                        {/*Completion Status Field*/}
                         <FormControl variant="standard" sx={{ minWidth: 200 }}>
                             <InputLabel id="completion">Completion Status</InputLabel>
                             <Select
@@ -80,6 +82,8 @@ function AddGame () {
                             </Select>
                         </FormControl>
                         <Typography>I=Incomplete P=Playing C=Complete</Typography>
+                        
+                        {/*Submit*/}
                         <Box mt={1}>
                             <Button 
                             variant="contained" 

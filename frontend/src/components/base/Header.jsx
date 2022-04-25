@@ -1,7 +1,6 @@
 import React from "react";
 import "./Base.css"
-import { Breadcrumbs,Stack,Typography } from "@mui/material";
-import { NavLink } from "react-router-dom";
+import { Stack, Typography } from "@mui/material";
 import { NavBar } from "./NavBar";
 
 function Header() {
