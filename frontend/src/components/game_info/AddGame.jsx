@@ -1,7 +1,6 @@
 import React  from "react";
-import { useState, useEffect } from "react";
 import { Formik, useFormik } from "formik";
-import { Box, Container, TextField, Button, Select, MenuItem } from "@mui/material";
+import { Box, Container, TextField, Button } from "@mui/material";
 import game_info from "./gameinfo_a";
 
 function AddGame () {
@@ -32,6 +31,9 @@ function AddGame () {
                                 variant="outlined"
                                 id='name'
                                 label='Game Title'
+                                style={{borderRadius:'50',
+                                    backgroundColor: "white"
+                                }}
                                 onChange={formik.handleChange}
                                 value={formik.values.name}
                                 />
@@ -42,10 +44,13 @@ function AddGame () {
                                 required
                                 variant="outlined"
                                 id='hours'
-                                label='hours'
+                                label='Hours'
+                                style={{borderRadius:'50',
+                                    backgroundColor: "white"
+                                }}
                                 onChange={formik.handleChange}
                                 value={formik.values.hours}
-                            />
+                                />
                         </Box>
                         <Box mt={1}>
                             <Button 

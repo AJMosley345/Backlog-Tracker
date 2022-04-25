@@ -1,14 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Sora:wght@200&display=swap');
 
-body #fonts {
-    font-family: 'Sora', sans-serif;
-}
-
-.background {
-    background-color: silver;
-}
-
-.Title {
+.Game-List {
     background:linear-gradient(#75c9b7,transparent);
     background-color: #abd699;
+    width: fit-content;
+    display: flex;
 }

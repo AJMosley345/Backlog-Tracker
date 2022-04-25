@@ -1,29 +1,20 @@
 import React from "react";
-import { Typography, ThemeProvider, createTheme } from '@mui/material'
-
-const theme = createTheme({
-    typography: {
-        fontFamily: [
-            'Sora',
-            'sans-serif'
-        ].join(','),
-        fontWeight: 'bold',
-    },
-
-    palette: {
-        primary: {
-          main: "rgba(236, 240, 241, 1)"
-        }
-    }
-});
+import "./Base.css"
+import { Breadcrumbs,Stack,Typography } from "@mui/material";
+import { NavLink } from "react-router-dom";
+import { NavBar } from "./NavBar";
 
 function Header() {
     return (
-        <ThemeProvider theme={theme}>
-                <Typography variant="h3">
-                    Backlog Tracker
-                </Typography>
-        </ThemeProvider>
+        <div className="Title">
+        <Stack>
+            <Typography variant="h3" fontFamily={'Sora'}>
+                Backlog Tracker
+            </Typography>
+            <div className="NavBar"></div>
+            <NavBar />
+        </Stack>
+    </div>
     );
 }
 

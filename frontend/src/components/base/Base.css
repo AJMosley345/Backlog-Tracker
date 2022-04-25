@@ -1,0 +1,22 @@
+  /* sora-regular - latin */
+  @import url('https://fonts.googleapis.com/css2?family=Sora:wght@200&display=swap');
+
+  .Title {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: baseline;
+    padding: 1em;
+    background:linear-gradient(#75c9b7,transparent);
+    background-color: #abd699;
+    color: #000;
+    font-family: 'Sora', sans-serif;
+  }
+
+  .NavBar {
+    font-family: 'Sora', sans-serif;
+  }
+
+  body {
+    background-color: #abd699;
+}

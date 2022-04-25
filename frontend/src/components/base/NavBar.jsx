@@ -1,17 +1,27 @@
-import { Breadcrumbs } from "@mui/material";
+import { Breadcrumbs,Typography } from "@mui/material";
 import { NavLink } from "react-router-dom";
+import "./Base.css"
 
 export const NavBar = () => {
     return (
-        <nav>
-            <Breadcrumbs aria-label="breadcrumb" separator='|'>
+        <div className="NavBar">
+            <Breadcrumbs aria-label="breadcrumb" separator='|' >
                 <NavLink to="/">
-                    Home
+                    <Typography variant="h4" fontFamily={'Sora'}>
+                        Home
+                    </Typography>
                 </NavLink>
                 <NavLink to="/add_game">
-                    Add Game
+                    <Typography variant="h4" fontFamily={'Sora'}>
+                        Add Game
+                    </Typography>
+                </NavLink>
+                <NavLink to="/edit_list">
+                    <Typography variant="h4" fontFamily={'Sora'}>
+                        Edit List
+                    </Typography>
                 </NavLink>
             </Breadcrumbs>
-        </nav>
+        </div>
     )
 }

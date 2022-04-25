@@ -1,16 +1,25 @@
 import React from 'react';
-import {  Paper, Box, Typography  } from '@mui/material';
-
+import {  Typography, Card, CardContent, Box, Stack } from '@mui/material';
+import './Game_Info.css';
 
 const GameInfo = (props) => {
     return (
-        <Box sx={{ width: '300px', backgroundColor: "#000000", textAlign: "center" }}>
-            <Paper elevation={3} variant="outlined">
-                <Typography >
-                    {props.name} | {props.hours} Hours
-                </Typography>
-            </Paper>
-        </Box>
+        <div className="Game-List">
+            <Card sx={{ maxWidth: 'fit-content', variant: 'outlined' }}>
+                    <CardContent className='Game-List'>
+                        <Box sx={{ display: 'inline-flex',  }}>
+                        <Stack direction={'row'} spacing={1}>
+                            <Typography fontFamily={'Sora'}>
+                                {props.name} |
+                            </Typography>
+                            <Typography fontFamily={'Sora'}>
+                                {props.hours} Hours
+                            </Typography>
+                        </Stack>
+                        </Box>
+                    </CardContent>
+            </Card>
+        </div>      
     )
 }
 
