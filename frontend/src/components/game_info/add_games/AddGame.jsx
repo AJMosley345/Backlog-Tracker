@@ -1,13 +1,24 @@
-import React  from "react";
+import React, { useState, useEffect } from "react";
 import { Formik, useFormik } from "formik";
-import { Box, Container, TextField, Button } from "@mui/material";
-import game_info from "./gameinfo_a";
+import { 
+    Box, 
+    Container, 
+    TextField, 
+    Button, 
+    Select, 
+    MenuItem, 
+    InputLabel, 
+    FormControl,
+    Typography
+} from "@mui/material";
+import game_info from "../get_game_info/gameinfo_a";
 
 function AddGame () {
     const formik = useFormik({
         initialValues: {
             name:'',
             hours: 0,
+            completion_status: '',
         },
         onSubmit: values  => {
             console.log('Form values', values)
@@ -15,6 +26,8 @@ function AddGame () {
             formik.resetForm();
         }
     })
+
+    const csKeys = ['', 'I', 'P', 'C']
 
     return (
         <>
@@ -31,27 +44,42 @@ function AddGame () {
                                 variant="outlined"
                                 id='name'
                                 label='Game Title'
-                                style={{borderRadius:'50',
-                                    backgroundColor: "white"
-                                }}
                                 onChange={formik.handleChange}
                                 value={formik.values.name}
                                 />
                         </Box>
-                        <Box mt={1}>
+                        <Box mt={3}>
                             <TextField
                                 type="number"
                                 required
                                 variant="outlined"
                                 id='hours'
                                 label='Hours'
-                                style={{borderRadius:'50',
-                                    backgroundColor: "white"
-                                }}
                                 onChange={formik.handleChange}
                                 value={formik.values.hours}
                                 />
                         </Box>
+                        <FormControl variant="standard" sx={{ minWidth: 200 }}>
+                            <InputLabel id="completion">Completion Status</InputLabel>
+                            <Select
+                                name='completion_status'
+                                required
+                                id='completion_status'
+                                label='Completion Status'
+                                onChange={formik.handleChange}
+                                value={formik.values.completion_status}
+                            >
+                                <MenuItem value={''} id={''}>
+                                    <em>None</em>
+                                </MenuItem>
+                                {csKeys.map((option) =>(
+                                    <MenuItem key={option} value={option}>
+                                        {option}
+                                    </MenuItem>
+                                ))}
+                            </Select>
+                        </FormControl>
+                        <Typography>I=Incomplete P=Playing C=Complete</Typography>
                         <Box mt={1}>
                             <Button 
                             variant="contained" 

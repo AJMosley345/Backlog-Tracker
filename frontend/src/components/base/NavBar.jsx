@@ -16,11 +16,6 @@ export const NavBar = () => {
                         Add Game
                     </Typography>
                 </NavLink>
-                <NavLink to="/edit_list">
-                    <Typography variant="h4" fontFamily={'Sora'}>
-                        Edit List
-                    </Typography>
-                </NavLink>
             </Breadcrumbs>
         </div>
     )

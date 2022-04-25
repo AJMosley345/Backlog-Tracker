@@ -7,13 +7,15 @@ import { Box, Button } from '@mui/material';
 const Games = () => {
     const [gameInfo,setGameInfo] = useState([]);
 
-    
-
     const fetchGames = async () =>{
         const response = await games.get('/game_info')
         setGameInfo(response.data)
     };
 
+    useEffect(() => {
+        fetchGames()
+    },[])
+    
     function refreshPage() {
         setTimeout(function(){ window.location.reload(false); }, 200);
     };
@@ -37,6 +39,7 @@ const Games = () => {
                                 key={game.id}
                                 name={game.name}
                                 hours={game.hours}
+                                completion_status={game.completion_status}
                                 />
                                 <Box sx={{ display: 'inline-flex' }}>
                                     <Button 
@@ -56,11 +59,6 @@ const Games = () => {
             </>
         )
     }
-
-
-    useEffect(() => {
-        fetchGames()
-    },[])
 
     return (
         <>

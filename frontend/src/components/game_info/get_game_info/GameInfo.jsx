@@ -1,6 +1,6 @@
 import React from 'react';
 import {  Typography, Card, CardContent, Box, Stack } from '@mui/material';
-import './Game_Info.css';
+import '../Game_Info.css';
 
 const GameInfo = (props) => {
     return (
@@ -13,7 +13,10 @@ const GameInfo = (props) => {
                                 {props.name} |
                             </Typography>
                             <Typography fontFamily={'Sora'}>
-                                {props.hours} Hours
+                                {props.hours} Hours |
+                            </Typography>
+                            <Typography fontFamily={'Sora'}>
+                                {props.completion_status}
                             </Typography>
                         </Stack>
                         </Box>

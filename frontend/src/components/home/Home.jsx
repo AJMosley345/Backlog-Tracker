@@ -1,5 +1,5 @@
 import React from "react";
-import Games from "../game_info/Games";
+import Games from "../game_info/get_game_info/Games";
 import Base from "../base/Base";
 import { Container, Stack, Typography, Box, Divider } from "@mui/material";
 import './Home.css'
