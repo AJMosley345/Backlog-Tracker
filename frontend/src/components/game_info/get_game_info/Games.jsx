@@ -1,7 +1,7 @@
 import games from './gameinfo_a';
-import GameInfo from "./GameInfo";
 import React, { useState,useEffect } from 'react';
-import { Box, Button } from '@mui/material';
+import { Box, Button, Stack, Typography, Card, CardContent } from '@mui/material';
+import '../Game_Info.css'
 
 // Takes the json response from gameinfo_a, puts it into the format of GameInfo and displays it
 const Games = () => {
@@ -11,10 +11,6 @@ const Games = () => {
         const response = await games.get('/game_info')
         setGameInfo(response.data)
     };
-
-    useEffect(() => {
-        fetchGames()
-    },[])
     
     function refreshPage() {
         setTimeout(function(){ window.location.reload(false); }, 200);
@@ -26,43 +22,54 @@ const Games = () => {
         .then(refreshPage());
     };
 
-    const createGameList = () => {
-        return(
+    useEffect(() => {
+        fetchGames()
+    },[])
+
+    const GameInfo = () => {
+        return( 
             <>
                 {gameInfo.map(game => {
-                    if(!game){
-                        return <div>Loading...</div>
-                    } else {
                         return (
-                            <>
-                                <GameInfo 
-                                key={game.id}
-                                name={game.name}
-                                hours={game.hours}
-                                completion_status={game.completion_status}
-                                />
-                                <Box sx={{ display: 'inline-flex' }}>
-                                    <Button 
-                                    variant="contained" 
-                                    color="primary" 
-                                    onClick={function(event){
-                                        deleteGame(game.id);
-                                    }}
-                                    >
-                                        Delete
-                                    </Button>
-                                </Box>
-                            </>
+                            <div className="Game-List">
+                                <Card sx={{ maxWidth: 'fit-content', variant: 'outlined' }}>
+                                        <CardContent className='Game-List'>
+                                            <Box sx={{ display: 'inline-flex' }}>
+                                                <Stack direction={'row'} spacing={1}>
+                                                    <Typography fontFamily={'Sora'}>
+                                                        {game.name} |
+                                                    </Typography>
+                                                    <Typography fontFamily={'Sora'}>
+                                                        {game.hours} Hours |
+                                                    </Typography>
+                                                    <Typography fontFamily={'Sora'}>
+                                                        {game.completion_status}
+                                                    </Typography>
+                                                    <Button 
+                                                    variant="contained" 
+                                                    color="primary"
+                                                    className='Delete-Button'
+                                                    onClick={function(event){
+                                                        deleteGame(game.id);
+                                                    }}
+                                                    >
+                                                        Delete
+                                                    </Button>
+                                                </Stack>
+                                            </Box>
+                                        </CardContent>
+                                </Card>
+                            </div>      
                         )
                     }
-                })}
+                )}
             </>
-        )
+            )
     }
 
     return (
         <>
-            {createGameList()}
+            {GameInfo()}
         </>
     )
 }

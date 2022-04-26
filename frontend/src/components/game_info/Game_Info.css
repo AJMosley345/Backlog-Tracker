@@ -6,3 +6,7 @@
     width: fit-content;
     display: flex;
 }
+
+.Delete-Button {
+    background-color: #16123f;
+}
